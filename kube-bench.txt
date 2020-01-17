@@ -1,0 +1,21 @@
+Harden a cluster
+
+ssh user@<Your_ip_here>
+
+docker run --rm -v `pwd`:/host aquasec/kube-bench:latest install
+
+run kube-bench against a master with version auto-detection:
+./kube-bench master
+
+ALTERNATIVE
+docker run --pid=host -v /etc:/etc:ro -v /var:/var:ro -t aquasec/kube-bench:latest [master|node] --version 1.13
+
+SSH Tunnel
+ssh -g -L 8001:localhost:8001 -f -N cloud_user@35.178.62.150
+
+Get Token
+kubectl -n kube-system describe secret \
+(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+
+
+eyJhbGciOiJSUzI1NiIsImtpZCI6ImplblV1UWx1bHVKRTNOcG9iTXdyaTZLdTRjNkpxVlIzX3dJdUh2dThkaDgifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLTJ2YjY0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI5MGY5MWNkNS1kZWJlLTQwMTItYTRlYi0wN2Q3YzA1YmQxYjUiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06YWRtaW4tdXNlciJ9.cFqXwLkKKSfu1sKLlyOLaW0YzjcRUzwUArakzHMqsbJIfOzRJfPiZyVLdTNLZPMjLkFrbCeM6D7MOSqa4kxAQ7-vZiOYS7JjrsO7JKvVv3u05aqlaTMDEfHI5ye9vQW4bLkugFzaybCAaKto1pnRe1FWFn72GESTdbGUlxnkl1Y5AOhXU1BfjZqwITdIvB31ujYMBdp53gRPDU08FxIi6ABnuVcvmc5lw5HtzbK_QauRBqbiYlSlJYVQJPDZsYq-cU8OxqT7gdXmu9N_VgNEpZEJywuNFdmXsP2sTx23AJNWIZTjaVZq7RMH0uWZu7VahI0HJ5eiS_I_s_CXIZQj4g

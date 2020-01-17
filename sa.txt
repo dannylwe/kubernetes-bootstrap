@@ -1,0 +1,11 @@
+#create service account
+kubectl create serviceaccount foo
+
+#see service account info
+kubectl get serviceaccounts jenkins -o yaml
+
+#see token from pod
+kubectl exec -it <name-of-pod> -- sh
+
+#get token from pod
+cat /var/run/secrets/kubernetes.io/serviceaccount/token
