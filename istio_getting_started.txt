@@ -1,0 +1,6 @@
+# getting started with istio
+https://medium.com/faun/istio-step-by-step-part-01-introduction-to-istio-b9fd0df30a9e
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-istio-with-kubernetes
+https://itnext.io/istio-service-mesh-the-step-by-step-guide-adf6da18bb9a
+https://dzone.com/articles/istio-service-mesh-the-step-by-step-guide-part-2-t
